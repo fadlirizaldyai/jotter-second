@@ -24,23 +24,14 @@ const DetailPage = () => {
       console.log("RESPOSE", response);
 
       if (response.redirected) {
-        // router.push(response.url);
         window.location.href = response.url; // Redirect to the URL provided by the response
       }
-      // const data = await response.json();
-      // console.log("Response", response, data);
-      // if (data.redirected) {
-      // }
-
-      // if (data.redirected) {
-      //   window.location.href = data.url;
-      // }
-      // else {
-      //     const data = await response.json();
-      //     if (data.redirectUrl) {
-      //       window.location.href = data.redirectUrl;
-      //     }
-      //   }
+      else {
+          const data = await response.json();
+          if (data.redirected) {
+            window.location.href = data.url;
+          }
+      }
     } catch (error) {
       console.log("ERROR", error);
     }
