@@ -17,6 +17,7 @@ const DetailPage = () => {
         headers: {
           Authorization: "TOKENDUMMY", // Replace with your actual token
           "Content-Type": "application/json",
+          origin:"https://jotter-second.vercel.app/"
         },
         credentials: "include",
       });
